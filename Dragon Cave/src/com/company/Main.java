@@ -1,6 +1,7 @@
 package com.company;
 
 import java.sql.SQLOutput;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Main {
@@ -10,7 +11,7 @@ public class Main {
 
         //Initializing Scanner
         Scanner input = new Scanner(System.in);
-
+        int choice = 0;
         // printing Statement
         System.out.println("You are in a land full of dragons. In front of you, \n"  +
                             "you see two cave. In one cave, the dragon is friendly \n" +
@@ -19,8 +20,12 @@ public class Main {
                             "Which cave will you go into? (1 or 2)");
 
         //taking the choice user input
-        int choice = input.nextInt();
-
+       try {
+            choice = input.nextInt();
+       }catch(InputMismatchException e)
+       {
+           System.out.println("That is not a number!");
+       }
         if(choice == 1) {
             System.out.println("You approach the cave... \n" +
                                             "it is dark and spooky... \n"+
