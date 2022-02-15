@@ -10,13 +10,12 @@ import java.io.BufferedReader;
 public class Main {
 
 static ArrayList<String> wordList = new ArrayList<>();
-static String randWord = "";
+static ArrayList<String> randWord = new ArrayList<>();
 static int incorrectGuesses = 0;
 static String choice = "y";
 static InputStreamReader input = new InputStreamReader(System.in);
 static BufferedReader reader = new BufferedReader(input);
-static String currentUserChoice = "";
-
+static String currentUserChoice;
 
 
     public static void main(String[] args) {
@@ -35,19 +34,27 @@ static String currentUserChoice = "";
             listWordLine();
             missedLetterLines();
             askQuestion();
-            currentUserChoice = takeInput();
+            takeInput();
+            compareLetters(currentUserChoice);
         }while(choice.equalsIgnoreCase("y"));
     }
 
-    public static String takeInput(){
+    public static void compareLetters(String currentUserChoice){
+        for(String i : randWord){
+            if (currentUserChoice.equalsIgnoreCase(i)){
+                System.out.println("Correct");
+            }
+
+        }
+    }
+
+    public static void takeInput(){
         try {
-            String choice = reader.readLine();
-            return choice;
+            Main.currentUserChoice = reader.readLine();
 
         }catch (IOException e){
 
         }
-        return choice;
     }
 
 
@@ -61,7 +68,7 @@ static String currentUserChoice = "";
     }
 
     public static void listWordLine(){
-        for(int i = 0; i <= randWord.length() - 1; i++){
+        for(int i = 1; i <= randWord.size(); i++){
             System.out.print("_");
         }
         System.out.println();
@@ -89,7 +96,7 @@ static String currentUserChoice = "";
             System.out.println("+---+");
             System.out.println((" O |"));
             System.out.println((" | |"));
-            System.out.println("   |");
+            System.out.println("    |");
 
 
         }
@@ -104,7 +111,11 @@ static String currentUserChoice = "";
 
     public static void getRandomWord(){
        Random rand = new Random();
-       randWord = wordList.get(rand.nextInt(wordList.size()));
+       String randomWord = wordList.get(rand.nextInt(wordList.size()));
+       for(int i = 0; i < randomWord.length(); i++){
+           randWord.add(i , String.valueOf(randomWord.charAt(i)));
+           System.out.println(randWord);
+       }
        //return randomWord;
     }
 
