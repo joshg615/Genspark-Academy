@@ -44,13 +44,15 @@ static ArrayList<String>wordLines = new ArrayList<>();
 
     public static void compareLetters(String currentUserChoice){
         int count = 0;
+        int change = 0;
         for(String i : randWord){
             if (currentUserChoice.equalsIgnoreCase(i)){
                 System.out.println("Correct");
-               // if(wordLines.get(count).equalsIgnoreCase())
-               // wordLines.remove(randWord.get(i.indexOf(i)));
-                //wordLines.remove(count);
                 wordLines.set(count, i);
+                change++;
+            }
+            else if (count == randWord.size() -1 && change == 0){
+                incorrectGuesses++;
             }
             count++;
         }
@@ -98,24 +100,24 @@ static ArrayList<String>wordLines = new ArrayList<>();
         }
         else if(incorrectGuesses == 1){
             System.out.println("+---+");
-            System.out.println((" O  |"));
+            System.out.println(("O   |"));
             System.out.println(("    |"));
             System.out.println(("    |"));
 
         }
         else if(incorrectGuesses == 2){
             System.out.println("+---+");
-            System.out.println((" O |"));
-            System.out.println((" | |"));
-            System.out.println("    |");
+            System.out.println("O  |");
+            System.out.println("|  |");
+            System.out.println("   |");
 
 
         }
         else if(incorrectGuesses == 3){
             System.out.println("+---+");
-            System.out.println((" O |"));
-            System.out.println((" | |"));
-            System.out.println((" | |"));
+            System.out.println(("O  |"));
+            System.out.println(("|  |"));
+            System.out.println(("|  |"));
 
         }
     }
@@ -131,8 +133,8 @@ static ArrayList<String>wordLines = new ArrayList<>();
     }
 
     public static void setWordList() {
-        wordList.add("cata");
-        wordList.add("dogo");
+        wordList.add("catd");
+        wordList.add("dog");
         wordList.add("rodeo");
     }
 }
