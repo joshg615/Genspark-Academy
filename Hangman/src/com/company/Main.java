@@ -43,12 +43,16 @@ static ArrayList<String>wordLines = new ArrayList<>();
     }
 
     public static void compareLetters(String currentUserChoice){
+        int count = 0;
         for(String i : randWord){
             if (currentUserChoice.equalsIgnoreCase(i)){
                 System.out.println("Correct");
-                wordLines.remove(randWord.get(randWord.indexOf(i)));
-                wordLines.add(randWord.indexOf(i), i);
+               // if(wordLines.get(count).equalsIgnoreCase())
+               // wordLines.remove(randWord.get(i.indexOf(i)));
+                //wordLines.remove(count);
+                wordLines.set(count, i);
             }
+            count++;
         }
     }
 
@@ -127,8 +131,8 @@ static ArrayList<String>wordLines = new ArrayList<>();
     }
 
     public static void setWordList() {
-        wordList.add("cat");
-        wordList.add("dog");
+        wordList.add("cata");
+        wordList.add("dogo");
         wordList.add("rodeo");
     }
 }
