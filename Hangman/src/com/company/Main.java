@@ -16,6 +16,7 @@ static String choice = "y";
 static InputStreamReader input = new InputStreamReader(System.in);
 static BufferedReader reader = new BufferedReader(input);
 static String currentUserChoice;
+static ArrayList<String>wordLines = new ArrayList<>();
 
 
     public static void main(String[] args) {
@@ -23,6 +24,7 @@ static String currentUserChoice;
         System.out.println("Lets play hangman");
         setWordList();
         getRandomWord();
+        setWordLines();
         System.out.println(wordList);
         startGame();
 
@@ -31,6 +33,7 @@ static String currentUserChoice;
     public static void startGame(){
         do{
             gameVisual();
+            //setWordLines();
             listWordLine();
             missedLetterLines();
             askQuestion();
@@ -43,8 +46,9 @@ static String currentUserChoice;
         for(String i : randWord){
             if (currentUserChoice.equalsIgnoreCase(i)){
                 System.out.println("Correct");
+                wordLines.remove(randWord.get(randWord.indexOf(i)));
+                wordLines.add(randWord.indexOf(i), i);
             }
-
         }
     }
 
@@ -67,11 +71,14 @@ static String currentUserChoice;
 
     }
 
-    public static void listWordLine(){
+    public static void setWordLines(){
         for(int i = 1; i <= randWord.size(); i++){
-            System.out.print("_");
+            wordLines.add("-");
         }
-        System.out.println();
+    }
+
+    public static void listWordLine(){
+        System.out.println(wordLines.toString());
         System.out.println();
 
 
