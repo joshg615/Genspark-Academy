@@ -21,19 +21,19 @@ static ArrayList<String>wordLines = new ArrayList<>();
 
     public static void main(String[] args) {
 	// write your code here
-        System.out.println("Lets play hangman");
         setWordList();
-        getRandomWord();
-        setWordLines();
         System.out.println(wordList);
         startGame();
 
     }
 
     public static void startGame(){
+        System.out.println("Lets play hangman");
+        getRandomWord();
+        setWordLines();
+        System.out.println(wordList);
         do{
             gameVisual();
-            //setWordLines();
             listWordLine();
             missedLetterLines();
             askQuestion();
@@ -42,6 +42,23 @@ static ArrayList<String>wordLines = new ArrayList<>();
         }while(choice.equalsIgnoreCase("y"));
     }
 
+    public static void gameEnd(){
+        System.out.println("Sorry you have lost");
+        System.out.println("Would you like to play again? Y/N");
+        try {
+            choice = reader.readLine();
+        }catch (IOException e){
+
+        }
+        if(choice.equalsIgnoreCase("Y")){
+            incorrectGuesses = 0;
+            wordLines.clear();
+            randWord.clear();
+            startGame();
+        }
+    }
+
+    //compares the user input with letters in the word and if it has a match updates wordLines and if no match incorrect++
     public static void compareLetters(String currentUserChoice){
         int count = 0;
         int change = 0;
@@ -54,10 +71,14 @@ static ArrayList<String>wordLines = new ArrayList<>();
             else if (count == randWord.size() -1 && change == 0){
                 incorrectGuesses++;
             }
+            if(incorrectGuesses == 4){
+                gameEnd();
+            }
             count++;
         }
     }
 
+    //takes user input
     public static void takeInput(){
         try {
             Main.currentUserChoice = reader.readLine();
@@ -67,7 +88,7 @@ static ArrayList<String>wordLines = new ArrayList<>();
         }
     }
 
-
+    //only prints guess a letter could put elsewhere
     public static void askQuestion(){
         System.out.println("Guess a letter!");
 
@@ -77,12 +98,14 @@ static ArrayList<String>wordLines = new ArrayList<>();
 
     }
 
+    //sets the blank lines for the word you need to guess
     public static void setWordLines(){
         for(int i = 1; i <= randWord.size(); i++){
             wordLines.add("-");
         }
     }
 
+    //list the wordLine
     public static void listWordLine(){
         System.out.println(wordLines.toString());
         System.out.println();
@@ -90,6 +113,7 @@ static ArrayList<String>wordLines = new ArrayList<>();
 
     }
 
+    //sets the game visuals for the hangman games and updates depending on how many incorrect guesses are made
     public static void gameVisual(){
 
         if(incorrectGuesses == 0){
@@ -122,6 +146,8 @@ static ArrayList<String>wordLines = new ArrayList<>();
         }
     }
 
+
+    //get a random word from an array
     public static void getRandomWord(){
        Random rand = new Random();
        String randomWord = wordList.get(rand.nextInt(wordList.size()));
@@ -129,7 +155,6 @@ static ArrayList<String>wordLines = new ArrayList<>();
            randWord.add(i , String.valueOf(randomWord.charAt(i)));
            System.out.println(randWord);
        }
-       //return randomWord;
     }
 
     public static void setWordList() {
