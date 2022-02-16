@@ -22,7 +22,7 @@ static ArrayList<String>wordLines = new ArrayList<>();
     public static void main(String[] args) {
 	// write your code here
         setWordList();
-        System.out.println(wordList);
+        //System.out.println(wordList);
         startGame();
 
     }
@@ -31,7 +31,7 @@ static ArrayList<String>wordLines = new ArrayList<>();
         System.out.println("Lets play hangman");
         getRandomWord();
         setWordLines();
-        System.out.println(wordList);
+        //System.out.println(wordList);
         do{
             gameVisual();
             listWordLine();
@@ -153,10 +153,11 @@ static ArrayList<String>wordLines = new ArrayList<>();
        String randomWord = wordList.get(rand.nextInt(wordList.size()));
        for(int i = 0; i < randomWord.length(); i++){
            randWord.add(i , String.valueOf(randomWord.charAt(i)));
-           System.out.println(randWord);
+           //System.out.println(randWord);
        }
     }
 
+    //sets the list of words to choose from
     public static void setWordList() {
         wordList.add("catd");
         wordList.add("dog");
