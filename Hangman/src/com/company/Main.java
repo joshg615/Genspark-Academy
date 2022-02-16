@@ -9,14 +9,14 @@ import java.io.BufferedReader;
 
 public class Main {
 
-static ArrayList<String> wordList = new ArrayList<>();
-static ArrayList<String> randWord = new ArrayList<>();
-static int incorrectGuesses = 0;
-static String choice = "y";
-static InputStreamReader input = new InputStreamReader(System.in);
-static BufferedReader reader = new BufferedReader(input);
-static String currentUserChoice;
-static ArrayList<String>wordLines = new ArrayList<>();
+private static ArrayList<String> wordList = new ArrayList<>();
+private static ArrayList<String> randWord = new ArrayList<>();
+private static int incorrectGuesses = 0;
+private static String choice = "y";
+private static InputStreamReader input = new InputStreamReader(System.in);
+private static BufferedReader reader = new BufferedReader(input);
+private static String currentUserChoice;
+private static ArrayList<String>wordLines = new ArrayList<>();
 
 
     public static void main(String[] args) {
