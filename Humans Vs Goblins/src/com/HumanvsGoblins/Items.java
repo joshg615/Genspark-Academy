@@ -6,6 +6,7 @@ public class Items {
    static String potion;
    static Items bomb;
    private String armor;
+   ArrayList<String> Items = new ArrayList<>();
 
 
    public String toString(){
@@ -14,7 +15,7 @@ public class Items {
    }
 
    public String getPotion() {
-      return potion;
+      return "Potion";
    }
 
    public void setPotion(String potion) {
@@ -35,6 +36,14 @@ public class Items {
 
    public void setBomb( Items bomb) {
       this.bomb = bomb;
+   }
+
+   public ArrayList<String> getItems() {
+      return Items;
+   }
+
+   public void setItems(ArrayList<String> items) {
+      Items = items;
    }
 
    public void randItem(){
