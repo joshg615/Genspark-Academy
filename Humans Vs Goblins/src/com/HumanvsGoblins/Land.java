@@ -13,12 +13,22 @@ public class Land {
     private int goblinNum = 3;
 
     public String toString(){
-        //return " yeaa";
         //Displays the Hash Map of mapGrid as 5 indexes across and each element in ()
-        return mapGrid.get(0) + "\n" +"( " + mapGrid.get(1)+" )" +"( " +mapGrid.get(2)+ " )" +"("+mapGrid.get(3)+")" +"( " + mapGrid.get(4) +" )" + "(" + mapGrid.get(5) +")" +"\n" +
+       /* return mapGrid.get(0) + "\n" +"( " + mapGrid.get(1)+" )" +"( " +mapGrid.get(2)+ " )" +"("+mapGrid.get(3)+")" +"( " + mapGrid.get(4) +" )" + "(" + mapGrid.get(5) +")" +"\n" +
                "("+ mapGrid.get(6) +")" + "("+mapGrid.get(7) +")"+"("+ mapGrid.get(8) +")"+"(" + mapGrid.get(9) +")"+ "(" +mapGrid.get(10) +")"+ "\n" +
                 "("+mapGrid.get(11) +")"+"(" +mapGrid.get(12) +")"+ "(" +mapGrid.get(13)+")"+"("+ mapGrid.get(14) +")"+"("+ mapGrid.get(15) +")" +"\n"+
                 "("+mapGrid.get(16) +")"+"("+ mapGrid.get(17)+")"+"("+ mapGrid.get(18)+")"+"("+mapGrid.get(19)+")"+"("+mapGrid.get(20)+")";
+        */
+        //Displays the Hash Map of mapGrid as 5 indexes across and eac element in ()
+        String display = "";
+        System.out.println(mapGrid.get(0));
+        for(int i = 1; i<21; i++){
+            display = display + "(" + mapGrid.get(i) +")";
+            if(i% 5 ==0){
+                display = display + "\n";
+            }
+        }
+        return display;
 
     }
     public Land(){
@@ -49,7 +59,7 @@ public class Land {
     }*/
 
     public void createMap(){
-        mapGrid.put(0,"  Humans vs Goblins\n");
+        mapGrid.put(0,"Humans vs Goblins\n");
         for(int i =  1; i < 21; i++){
             mapGrid.put(i, "-");
         }
