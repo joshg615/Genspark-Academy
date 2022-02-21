@@ -18,8 +18,9 @@ public class Human {
     }
 
     public String toString(){
-        return "Human(Health = " + this.getHealth() + ", Strength = " + this.getStrength() + " Armor = " + this.getArmor() + ")"+ "  Inventory:" + this.getInventory()
-                + "bombs: " + this.getObject();
+        /*return "Human(Health = " + this.getHealth() + ", Strength = " + this.getStrength() + " Armor = " + this.getArmor() + ")"+ "  Inventory:" + this.getInventory()
+                + "bombs: " + this.getObject();*/
+        return "H";
     }
 
     public void setHealth(int health) {

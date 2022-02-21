@@ -10,7 +10,8 @@ public class Goblins {
     }
 
     public String toString(){
-        return "Goblin(Health = " + this.getHealth() + ", Strength = " + this.getStrength() + ")";
+        //return "Goblin(Health = " + this.getHealth() + ", Strength = " + this.getStrength() + ")";
+        return "G";
     }
 
     public int getHealth() {
