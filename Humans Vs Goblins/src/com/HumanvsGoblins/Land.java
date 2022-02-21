@@ -9,7 +9,12 @@ public class Land {
     ArrayList<Items> item = new ArrayList<>();
 
     public String toString(){
-        return " yeaa";
+        //return " yeaa";
+
+        return mapGrid.get(0) + "\n" + mapGrid.get(1)+mapGrid.get(2)+ mapGrid.get(3) + mapGrid.get(4) + mapGrid.get(5) + "\n" +
+                mapGrid.get(6) + mapGrid.get(7) + mapGrid.get(8) + mapGrid.get(9) + mapGrid.get(10) + "\n" +
+                mapGrid.get(11) + mapGrid.get(12) + mapGrid.get(13)+ mapGrid.get(14) + mapGrid.get(15) + "\n"+
+                mapGrid.get(16) + mapGrid.get(17)+ mapGrid.get(18)+mapGrid.get(19)+mapGrid.get(20);
 
     }
     public Land(){
