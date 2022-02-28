@@ -7,7 +7,7 @@ import java.io.BufferedReader;
 
 
 
-public class Main {
+public class Hangman {
 
 private static ArrayList<String> wordList = new ArrayList<>();
 private static ArrayList<String> randWord = new ArrayList<>();
@@ -81,7 +81,7 @@ private static ArrayList<String>wordLines = new ArrayList<>();
     //takes user input
     public static void takeInput(){
         try {
-            Main.currentUserChoice = reader.readLine();
+            Hangman.currentUserChoice = reader.readLine();
 
         }catch (IOException e){
 
