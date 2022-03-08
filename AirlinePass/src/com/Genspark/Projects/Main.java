@@ -2,6 +2,7 @@ package com.Genspark.Projects;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.sql.SQLOutput;
 
 public class Main {
 /*The application should generate a boarding pass ticket using the boarding pass details. The generated ticket should contain the following information:
@@ -20,5 +21,6 @@ Total Ticket Price*/
 
         System.out.println("hello");
         System.out.println("heloo again");
+        System.out.println("5644");
     }
 }
