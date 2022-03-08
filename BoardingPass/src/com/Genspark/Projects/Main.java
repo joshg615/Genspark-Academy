@@ -1,8 +1,9 @@
 package com.Genspark.Projects;
 
-public class Main {
+public class BoardingPass {
 
     public static void main(String[] args) {
 	// write your code here
+        
     }
 }
