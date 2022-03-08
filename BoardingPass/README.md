@@ -1,2 +1,0 @@
-# Genspark-Academy
-Project Portfolio 
