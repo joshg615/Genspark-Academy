@@ -3,6 +3,12 @@ package com.Genspark.Projects;
 public class InformationClass {
     private String name, email, phoneNumber,gender,age;
 
+    InformationClass(){
+
+        System.out.println("Hey lets book your trip today");
+
+        System.out.println("Hey what's you name?");
+    }
 
     InformationClass(String name, String email, String phoneNumber, String gender, String age){
         setName(name);
@@ -53,5 +59,9 @@ public class InformationClass {
     public void setAge(String age) {
         age = age;
     }
+
+
+
+
 }
 
