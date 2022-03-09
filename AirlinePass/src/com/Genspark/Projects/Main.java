@@ -2,6 +2,7 @@ package com.Genspark.Projects;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.util.Scanner;
 
 
 public class Main {
@@ -30,7 +31,7 @@ Total Ticket Price*/
 
         System.out.println("Hey lets book your trip today");
 
-        System.out.println("Hey what's you name?");
+
 
     }
 }
