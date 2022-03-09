@@ -26,7 +26,7 @@ Total Ticket Price*/
         InputStreamReader input = new InputStreamReader(System.in);
         BufferedReader reader = new BufferedReader(input);
 
-
+        System.out.println("Welcome Everyone!");
 
         System.out.println("Hey lets book your trip today");
 
