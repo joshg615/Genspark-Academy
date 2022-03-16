@@ -4,9 +4,9 @@ public class Goblins {
     private int health, strength;
 
     public Goblins(){}
-    public Goblins(int a, int b){
-        setHealth(a);
-        setStrength(b);
+    public Goblins(int health, int strength){
+        setHealth(health);
+        setStrength(strength);
     }
 
     public String toString(){

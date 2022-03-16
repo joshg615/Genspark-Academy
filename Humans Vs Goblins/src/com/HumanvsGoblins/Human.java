@@ -9,10 +9,10 @@ public class Human {
 
 
     public Human(){}
-    public Human(int a, int b, int c, ArrayList<String> inventory, ArrayList<Items> object){
-        setHealth(a);
-        setStrength(b);
-        setArmor(c);
+    public Human(int health, int strength, int armor, ArrayList<String> inventory, ArrayList<Items> object){
+        setHealth(health);
+        setStrength(strength);
+        setArmor(armor);
         setInventory(inventory);
         setObject(object);
     }
