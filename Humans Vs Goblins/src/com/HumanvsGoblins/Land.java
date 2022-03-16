@@ -5,20 +5,14 @@ import java.util.HashMap;
 import java.util.Random;
 
 public class Land {
-    HashMap<Integer, String> mapGrid = new HashMap<>();
-    ArrayList<String> inv = new ArrayList<>();
-    ArrayList<Items> item = new ArrayList<>();
-    ArrayList<String> items = new ArrayList<String>();
-    ArrayList<String> weapons = new ArrayList<>();
+    private HashMap<Integer, String> mapGrid = new HashMap<>();
+    private ArrayList<String> inv = new ArrayList<>();
+    private ArrayList<Items> item = new ArrayList<>();
+    private ArrayList<String> items = new ArrayList<String>();
+    private ArrayList<String> weapons = new ArrayList<>();
     private int goblinNum = 3;
 
     public String toString(){
-        //Displays the Hash Map of mapGrid as 5 indexes across and each element in ()
-       /* return mapGrid.get(0) + "\n" +"( " + mapGrid.get(1)+" )" +"( " +mapGrid.get(2)+ " )" +"("+mapGrid.get(3)+")" +"( " + mapGrid.get(4) +" )" + "(" + mapGrid.get(5) +")" +"\n" +
-               "("+ mapGrid.get(6) +")" + "("+mapGrid.get(7) +")"+"("+ mapGrid.get(8) +")"+"(" + mapGrid.get(9) +")"+ "(" +mapGrid.get(10) +")"+ "\n" +
-                "("+mapGrid.get(11) +")"+"(" +mapGrid.get(12) +")"+ "(" +mapGrid.get(13)+")"+"("+ mapGrid.get(14) +")"+"("+ mapGrid.get(15) +")" +"\n"+
-                "("+mapGrid.get(16) +")"+"("+ mapGrid.get(17)+")"+"("+ mapGrid.get(18)+")"+"("+mapGrid.get(19)+")"+"("+mapGrid.get(20)+")";
-        */
         //Displays the Hash Map of mapGrid as 5 indexes across and eac element in ()
         String display = "";
         System.out.println(mapGrid.get(0));
@@ -33,30 +27,7 @@ public class Land {
     }
     public Land(){
         createMap();
-        items.add("potion");
-        items.add("bomb");
-        items.add("armor");
-        //populateMap();
-       // System.out.println(mapGrid);
-        //System.out.println();
-        Human human = new Human(5,10,1, inv, item);
-        Goblins gobi1 = new Goblins(5,3);
-        Goblins gobi2 = new Goblins(3, 4);
-        populateMap(human,gobi1, gobi2, items, weapons);
-        human.pickUpItem(inv,"Potion" );
-        human.pickUpItem(inv,"Potion" );
-        human.pickUpObject(item,Items.bomb );
-        //mapGrid.put(2, human.toString());
-        //System.out.println(mapGrid.toString());
-        System.out.println(human);
-        human.useItem(human,human.getInventory(), "potion");
-        System.out.println(human);
     }
-   /* public String toString(){
-        return " yeaa";
-
-
-    }*/
 
     public void createMap(){
         mapGrid.put(0,"Humans vs Goblins\n");
@@ -78,6 +49,13 @@ public class Land {
 
     }
 
+    public void setMapGrid(HashMap<Integer, String> mapGrid) {
+       // createMap();
 
+        this.mapGrid = mapGrid;
+    }
 
+    public HashMap<Integer, String> getMapGrid() {
+        return mapGrid;
+    }
 }

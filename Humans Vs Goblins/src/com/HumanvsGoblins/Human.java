@@ -1,6 +1,8 @@
 package com.HumanvsGoblins;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Human {
     private int health, strength, armor;
@@ -82,6 +84,16 @@ public class Human {
         } else if (item.equalsIgnoreCase("Bomb")) {
 
         }
+    }
+
+    public void movement(Human human, Land land){
+       HashMap currentState = land.getMapGrid();
+       for(Object mapElement : currentState.entrySet()){
+           System.out.println(mapElement.toString());
+       }
+
+
+           //human.
     }
 
     public Goblins attack(Goblins gob){

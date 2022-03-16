@@ -6,6 +6,7 @@ public class Main {
 	// write your code here
 
         Land l = new Land();
+
         System.out.println(l);
     }
 }
